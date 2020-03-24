@@ -1,0 +1,45 @@
+.grid-box{
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    padding: 2px;
+}
+
+.btnRight{
+    position: absolute;
+    right: 0;
+}
+
+.bingo-box{
+    color: grey
+}
+
+.sucess-box{
+    color: green
+}
+
+.counterbox{
+    width: 100%;
+    padding: 5px;
+    text-align: center;   
+    vertical-align: middle; 
+}
+
+.counterno{
+    font-size: 32px;
+}
+
+.gameover{
+    color: red;
+    font-size: 24px;
+    text-align: center;   
+    margin-left: 35%;
+}
+
+.successGrid{
+    color: green;
+}
+
+.beforeGrid{
+    color:black;
+}

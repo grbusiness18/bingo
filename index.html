@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Bingo</title>
+  </head>
+  <body ng-controller="AppController as appctl">
+   <div class="container-fluid border">
+    <div class="row text-center">
+        <h1 class="text-center ml-5 pl-5">Welcome !!</h1>
+    </div>
+   </div>
+
+   <div class="container-fluid mt-3 p-3">
+    <div class="row">
+        <div class="col-1">
+           
+        </div>
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+            <span> B </span>
+        </div>
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+            <span> I </span>
+        </div>
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+            <span> N </span>
+        </div>
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+            <span> G </span>
+        </div>
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+            <span> O </span>
+        </div>
+        <div class="col-1  grid-box">
+            
+        </div>
+    </div>
+   </div>
+
+   <div class="container-fluid mt-3 p-3">
+    <div class="row" ng-repeat="grid in aGrid">
+        <div class="col-1">
+           
+        </div>
+        <div class="col-2 border grid-box" ng-click="appctl.gridClick($index, 0)" ng-style="{ 'color' : (appctl.isGridDisbaled($index, 0)) ? 'green' : 'black' }">
+            {{grid[0]}}
+        </div>
+        <div class="col-2 border grid-box" ng-click="appctl.gridClick($index, 1)" ng-style="{ 'color' : (appctl.isGridDisbaled($index, 1)) ? 'green' : 'black' }">
+            {{grid[1]}}
+        </div>
+        <div class="col-2 border grid-box" ng-click="appctl.gridClick($index, 2)" ng-style="{ 'color' : (appctl.isGridDisbaled($index, 2)) ? 'green' : 'black' }">
+            {{grid[2]}}
+        </div>
+        <div class="col-2 border grid-box" ng-click="appctl.gridClick($index, 3)" ng-style="{ 'color' : (appctl.isGridDisbaled($index, 3)) ? 'green' : 'black' }">
+            {{grid[3]}}
+        </div>
+        <div class="col-2 border grid-box" ng-click="appctl.gridClick($index, 4)" ng-style="{ 'color' : (appctl.isGridDisbaled($index, 4)) ? 'green' : 'black' }">
+            {{grid[4]}}
+        </div>
+        <div class="col-1  grid-box">
+            
+        </div>
+    </div>
+   </div>
+
+   <div class="container-fluid mt-2">
+    <div class="row">        
+        <div class="counterbox">            
+            <span class="counterno">
+             {{movecounter}}
+            </span> Clicks.
+        </div>        
+    </div>
+   </div>
+
+   <div class="container-fluid mt-2" ng-show="showGameOver">
+    <div class="row">        
+        <div class="gameover">            
+            Game Over !!
+        </div>        
+    </div>
+   </div>
+
+   <div class="container-fluid">
+       <div class="row">
+           <div class="col-6">            
+            <button type="button" class="btn btn-success" ng-click="appctl.generate()"
+            ng-show="shwGenerate">Generate</button>
+           </div>
+           <div class="col-6 pr-4">            
+            <button type="button" class="btn btn-danger btnRight" ng-click="appctl.reset()"
+            ng-show="shwReset"
+            >Reset</button>
+           </div>
+       </div>
+   </div>
+
+  </body>
+</html>
