@@ -31,16 +31,16 @@
         <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
             <span> B </span>
         </div>
-        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[1]) ? 'green' : 'gray' }">
             <span> I </span>
         </div>
-        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[2]) ? 'green' : 'gray' }">
             <span> N </span>
         </div>
-        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[3]) ? 'green' : 'gray' }">
             <span> G </span>
         </div>
-        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[0]) ? 'green' : 'gray' }">
+        <div class="col-2 border grid-box bingo-box" ng-style="{ 'color' : (bingo[4]) ? 'green' : 'gray' }">
             <span> O </span>
         </div>
         <div class="col-1  grid-box">
@@ -101,7 +101,7 @@
            </div>
            <div class="col-6 pr-4">            
             <button type="button" class="btn btn-danger btnRight" ng-click="appctl.reset()"
-            ng-show="shwReset"
+            ng-show="showGameOver"
             >Reset</button>
            </div>
        </div>
