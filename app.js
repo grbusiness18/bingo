@@ -27,10 +27,11 @@ angular.module('app', [])
     $scope.aGridEnb = $scope.chunk([...Array(25).keys()].map(x => false));
 
     gridApp.generate = function(){
+        this.reset();
         var arr = [...Array(25).keys()].map(x => x +1 );
         arr.sort(() => Math.random() - 0.5);        
         $scope.aGrid = $scope.chunk(arr);  
-        this.reset();
+                
     }
 
     gridApp.reset = function(){
@@ -52,9 +53,7 @@ angular.module('app', [])
     }
 
     gridApp.gridClick = function(idx, sidx){
-        if ($scope.showGameOver){
-            return 
-        }
+        
         if ($scope.movecounter >= 25 ){
             // game over
             $scope.showGameOver = true
